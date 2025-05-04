@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "creation": "2025-05-04 21:48:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "component_type",
+  "brand",
+  "model",
+  "serial_number",
+  "column_break_5",
+  "installation_date",
+  "condition",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "component_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Komponententyp",
+   "options": "Rahmen\nGabel\nSchaltung\nLenker\nSattel\nLaufräder\nReifen\nBremsen\nKette\nPedale\nAntrieb\nSonstiges",
+   "reqd": 1
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Marke"
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Modell"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Data",
+   "label": "Seriennummer"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "installation_date",
+   "fieldtype": "Date",
+   "label": "Einbaudatum"
+  },
+  {
+   "default": "Neu",
+   "fieldname": "condition",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Zustand",
+   "options": "Neu\nWie neu\nGut\nGebraucht\nAbgenutzt\nReparaturbedürftig"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Anmerkungen"
+  }
+ ],
+ "istable": 1,
+ "modified": "2025-05-04 21:48:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fahrradwerkstatt",
+ "name": "Bicycle Component",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
