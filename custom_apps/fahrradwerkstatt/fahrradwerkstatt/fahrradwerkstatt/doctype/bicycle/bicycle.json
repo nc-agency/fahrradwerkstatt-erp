@@ -1,0 +1,275 @@
+{
+ "actions": [],
+ "autoname": "field:bicycle_name",
+ "creation": "2025-05-04 21:46:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bicycle_name",
+  "customer",
+  "customer_name",
+  "column_break_4",
+  "brand",
+  "model",
+  "year",
+  "section_break_6",
+  "serial_number",
+  "frame_number",
+  "weight",
+  "column_break_10",
+  "type",
+  "color",
+  "wheel_size",
+  "details_section",
+  "components",
+  "status_section",
+  "status",
+  "purchase_date",
+  "last_service_date",
+  "column_break_19",
+  "value",
+  "warranty_expiry",
+  "notes_section",
+  "notes",
+  "images_section",
+  "bicycle_image",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "bicycle_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Fahrrad-Bezeichnung",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Kunde",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Kundenname",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "brand",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Marke",
+   "reqd": 1
+  },
+  {
+   "fieldname": "model",
+   "fieldtype": "Data",
+   "label": "Modell"
+  },
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "label": "Modelljahr"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Technische Daten"
+  },
+  {
+   "fieldname": "serial_number",
+   "fieldtype": "Data",
+   "label": "Seriennummer",
+   "unique": 1
+  },
+  {
+   "fieldname": "frame_number",
+   "fieldtype": "Data",
+   "label": "Rahmennummer"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Gewicht (kg)"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Typ",
+   "options": "City\nMountain Bike\nRennrad\nTrekking\nE-Bike\nKinderrad\nLastenrad\nSonstiges"
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Data",
+   "label": "Farbe"
+  },
+  {
+   "fieldname": "wheel_size",
+   "fieldtype": "Select",
+   "label": "Reifengröße",
+   "options": "16\"\n20\"\n24\"\n26\"\n27.5\"\n28\"\n29\"\nSonstiges"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Komponenten"
+  },
+  {
+   "fieldname": "components",
+   "fieldtype": "Table",
+   "label": "Komponenten",
+   "options": "Bicycle Component"
+  },
+  {
+   "fieldname": "status_section",
+   "fieldtype": "Section Break",
+   "label": "Status & Daten"
+  },
+  {
+   "default": "Neu",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Neu\nEinsatzbereit\nIn Reparatur\nVerkauft\nAusrangiert"
+  },
+  {
+   "fieldname": "purchase_date",
+   "fieldtype": "Date",
+   "label": "Kaufdatum"
+  },
+  {
+   "fieldname": "last_service_date",
+   "fieldtype": "Date",
+   "label": "Letztes Servicedatum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Currency",
+   "label": "Wert",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "warranty_expiry",
+   "fieldtype": "Date",
+   "label": "Garantieablauf"
+  },
+  {
+   "fieldname": "notes_section",
+   "fieldtype": "Section Break",
+   "label": "Anmerkungen"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Anmerkungen"
+  },
+  {
+   "fieldname": "images_section",
+   "fieldtype": "Section Break",
+   "label": "Bilder"
+  },
+  {
+   "fieldname": "bicycle_image",
+   "fieldtype": "Attach Image",
+   "label": "Fahrradbild"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Bicycle",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Bicycle Repair",
+   "link_fieldname": "bicycle"
+  },
+  {
+   "link_doctype": "Maintenance Schedule",
+   "link_fieldname": "item_code"
+  }
+ ],
+ "modified": "2025-05-04 21:46:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fahrradwerkstatt",
+ "name": "Bicycle",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
