@@ -1,0 +1,272 @@
+{
+ "actions": [],
+ "autoname": "REP-.YYYY.-.#####",
+ "creation": "2025-05-04 21:47:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "bicycle",
+  "bicycle_name",
+  "customer",
+  "customer_name",
+  "column_break_3",
+  "repair_date",
+  "estimated_completion_date",
+  "completion_date",
+  "section_break_7",
+  "description",
+  "diagnostics",
+  "section_break_10",
+  "parts",
+  "section_break_12",
+  "labor_cost",
+  "total_cost",
+  "column_break_15",
+  "status",
+  "is_maintenance",
+  "priority",
+  "section_break_19",
+  "technician",
+  "column_break_21",
+  "invoice",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "bicycle",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Fahrrad",
+   "options": "Bicycle",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "bicycle.bicycle_name",
+   "fieldname": "bicycle_name",
+   "fieldtype": "Data",
+   "label": "Fahrradname",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "bicycle.customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Kunde",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Kundenname",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "repair_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Annahmedatum",
+   "reqd": 1
+  },
+  {
+   "fieldname": "estimated_completion_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Geschätztes Fertigstellungsdatum"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Tatsächliches Fertigstellungsdatum"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "Beschreibung"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Beschreibung",
+   "reqd": 1
+  },
+  {
+   "fieldname": "diagnostics",
+   "fieldtype": "Text Editor",
+   "label": "Diagnose"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Teile"
+  },
+  {
+   "fieldname": "parts",
+   "fieldtype": "Table",
+   "label": "Verwendete Teile",
+   "options": "Bicycle Repair Part"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "Kosten"
+  },
+  {
+   "fieldname": "labor_cost",
+   "fieldtype": "Currency",
+   "label": "Arbeitskosten",
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Currency",
+   "label": "Gesamtkosten",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Eingegangen",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Geplant\nEingegangen\nIn Arbeit\nWartend\nAbgeschlossen\nStorniert",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_maintenance",
+   "fieldtype": "Check",
+   "label": "Ist eine Wartung"
+  },
+  {
+   "default": "Normal",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priorität",
+   "options": "Niedrig\nNormal\nHoch\nDringend"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Zuweisung"
+  },
+  {
+   "fieldname": "technician",
+   "fieldtype": "Link",
+   "label": "Techniker",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "invoice",
+   "fieldtype": "Link",
+   "label": "Rechnung",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Bicycle Repair",
+   "print_hide": 1,
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Sales Invoice",
+   "link_fieldname": "bicycle_repair"
+  }
+ ],
+ "modified": "2025-05-04 21:47:00.000000",
+ "modified_by": "Administrator",
+ "module": "Fahrradwerkstatt",
+ "name": "Bicycle Repair",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Sales User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "bicycle_name",
+ "track_changes": 1
+}
